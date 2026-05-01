@@ -395,3 +395,9 @@ Explanation:
 In this code last line always ensures an infitie loop because of b second_label ( which is B -28 command actually), hence it will always get back to str r14,[r13,#-4]! until the stack overflow and crash 
 
 ----------------------------------------------------------------------
+
+
+Here is the youtube link for the video widely describing everything happening here 
+
+https://youtu.be/DNjPUK6iYEQ
+
