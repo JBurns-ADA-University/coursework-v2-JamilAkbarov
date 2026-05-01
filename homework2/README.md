@@ -146,17 +146,17 @@ b	  2		8	3	3	  0		0	1
 
 1. Condition = 1011 -> LT 
 
-2. Type = 00, I=0 -> Data processing, no immediate value 
+2. Type = 00, I=1 -> Data processing, immediate value 
 
 3. Cmd = 0100 -> ADD
 
 4. S = 0 ->no Update for NZCV flag
 
-5. Rn = 0000 -> R0 
+5. Rn = 0011 -> R3
 
-6. Rd = 0000 -> R0  
+6. Rd = 0011 -> R3  
 
-7. Src2 = 0010 -> R2 
+7. Src2 = 0001 -> #1  
 
 Assembly: ADDLT r3,r3,#1 
 
@@ -321,6 +321,7 @@ e	  0		5	3	 5	  0		0	4
 
 7. Src2 = 0100 -> R4       
 
+subs r5,r3,r4
 ----------------------------------------------------------------------
 
 e	   a	f	f	 f	  f		f	9
