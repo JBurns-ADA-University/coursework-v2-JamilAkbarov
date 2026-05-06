@@ -37,11 +37,11 @@ _start:
 
 	bl -4
 	// ebffffff → BL instruction
-	// branch with link, saves return address in LR
+	// branch with link, saves return address in R14
 
 	str r14,[r13,#-4]!
 	// e52de004 → STR instruction
-	// SP = SP - 4, then LR is stored on stack
+	// R13 = R13 - 4, then R14 is stored on stack
 
 	mov r4,#15
 	// e3a0400f → MOV instruction
