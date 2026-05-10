@@ -399,14 +399,14 @@ Final version:
 
 _start:
 
-			mov r1,#0		#adds 0 to r1
+			mov r1,#0		
 			mov r2,#10		
 			mov r3,#0		
 			mov r4,#5
 
 		first_label:	
 
-			subs r5,r3,r4   # updating NZCV by storing the result of r3-r4
+			subs r5,r3,r4   
 			addlt r0,r0,r2	 
 			addlt r3,r3,#1	
 			blt first_label
@@ -440,3 +440,57 @@ Further, refer to this main part where the main goal of the HW is demonstrated a
 
 https://youtu.be/DNjPUK6iYEQ
 
+
+
+VERY IMPORTANT ONCE AGAIN! 
+
+
+_start:
+	
+	mov r1,#0		
+	mov r2,#10		
+	mov r3,#0		
+	mov r4,#5					
+	subs r5,r3,r4 
+	addlt r0,r0,r2	 
+	addlt r3,r3,#1	
+	blt -20	
+	bl -4		
+	str r14,[r13,#-4]!
+	mov r4,#15		
+	mov r5,#10		
+	add r6,r5,r4	 
+	subs r5,r3,r4	
+	b -28	
+
+(This one is included into hw_2_with_comments.s file)
+
+This is the final code that I got from translating directly from hexadecimal , however in order to run it properly on Cpulator we should represent it in this way 
+
+_start:
+
+			mov r1,#0		
+			mov r2,#10		
+			mov r3,#0		
+			mov r4,#5
+
+		first_label:	
+
+			subs r5,r3,r4   
+			addlt r0,r0,r2	 
+			addlt r3,r3,#1	
+			blt first_label
+			bl second_label
+
+		second_label:			
+			str r14,[r13,#-4]!  
+			mov r4,#15		
+			mov r5,#10		
+			add r6,r5,r4	 
+			subs r5,r3,r4	
+			b second_label
+
+
+this one is included into hw_2.s
+
+This is the code you actually supposed to run in Cpulator if you want 
